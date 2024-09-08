@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Version>0.0.11</Version>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>Library</OutputType>
+    <Authors>ArsonAssassin</Authors>
+    <Product>Archipelago.Core.GUI</Product>
+    <PackageId>Archipelago.Core.GUI</PackageId>
+    <Description>A class library for providing a basic GUI for my other libraries.</Description>
+    <RepositoryUrl>https://github.com/ArsonAssassin/Archipelago.Core</RepositoryUrl>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+</Project>
