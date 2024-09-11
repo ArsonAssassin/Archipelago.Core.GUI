@@ -37,6 +37,7 @@
             label1 = new Label();
             connectBtn = new Button();
             pictureBox1 = new PictureBox();
+            commandTextbox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -118,11 +119,20 @@
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
             // 
+            // commandTextbox
+            // 
+            commandTextbox.Location = new Point(28, 423);
+            commandTextbox.Name = "commandTextbox";
+            commandTextbox.Size = new Size(417, 23);
+            commandTextbox.TabIndex = 16;
+            commandTextbox.KeyDown += commandTextbox_KeyDown;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(771, 444);
+            ClientSize = new Size(771, 458);
+            Controls.Add(commandTextbox);
             Controls.Add(pictureBox1);
             Controls.Add(passwordTextbox);
             Controls.Add(label3);
@@ -150,5 +160,6 @@
         private Label label1;
         private Button connectBtn;
         private PictureBox pictureBox1;
+        private TextBox commandTextbox;
     }
 }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <Version>0.0.11</Version>
+    <Version>0.0.12</Version>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>

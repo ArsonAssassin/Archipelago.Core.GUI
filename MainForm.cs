@@ -3,6 +3,7 @@ namespace Archipelago.Core.GUI
     public partial class MainForm : Form
     {
         public event EventHandler<ConnectClickedEventArgs> ConnectClicked;
+        public event EventHandler<ArchipelagoCommandEventArgs> CommandReceived;
         public MainForm(GuiDesignOptions options)
         {
             InitializeComponent();
@@ -44,6 +45,19 @@ namespace Archipelago.Core.GUI
 
                 System.Diagnostics.Debug.WriteLine(output + System.Environment.NewLine);
             }));
+        }
+
+        private void commandTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrWhiteSpace(commandTextbox.Text))
+                {
+                    return;
+                }
+
+                CommandReceived?.Invoke(this, new ArchipelagoCommandEventArgs() { Command = commandTextbox.Text });
+            }
         }
     }
 }
