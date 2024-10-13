@@ -38,6 +38,7 @@
             connectBtn = new Button();
             pictureBox1 = new PictureBox();
             commandTextbox = new TextBox();
+            commandBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -127,11 +128,22 @@
             commandTextbox.TabIndex = 16;
             commandTextbox.KeyDown += commandTextbox_KeyDown;
             // 
+            // commandBtn
+            // 
+            commandBtn.Location = new Point(447, 422);
+            commandBtn.Name = "commandBtn";
+            commandBtn.Size = new Size(52, 24);
+            commandBtn.TabIndex = 17;
+            commandBtn.Text = "Send";
+            commandBtn.UseVisualStyleBackColor = true;
+            commandBtn.Click += button1_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(771, 458);
+            Controls.Add(commandBtn);
             Controls.Add(commandTextbox);
             Controls.Add(pictureBox1);
             Controls.Add(passwordTextbox);
@@ -161,5 +173,6 @@
         private Button connectBtn;
         private PictureBox pictureBox1;
         private TextBox commandTextbox;
+        private Button commandBtn;
     }
 }

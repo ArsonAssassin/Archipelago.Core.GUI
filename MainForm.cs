@@ -18,10 +18,12 @@ namespace Archipelago.Core.GUI
             if (options.ButtonColor != null)
             {
                 connectBtn.BackColor = options.ButtonColor.Value;
+                commandBtn.BackColor = options.ButtonColor.Value;
             }
             if (options.ButtonTextColor != null)
             {
                 connectBtn.ForeColor = options.ButtonTextColor.Value;
+                commandBtn.ForeColor = options.ButtonTextColor.Value;
             }
             if (options.Image != null)
             {
@@ -57,7 +59,19 @@ namespace Archipelago.Core.GUI
                 }
 
                 CommandReceived?.Invoke(this, new ArchipelagoCommandEventArgs() { Command = commandTextbox.Text });
+                commandTextbox.Clear();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(commandTextbox.Text))
+            {
+                return;
+            }
+
+            CommandReceived?.Invoke(this, new ArchipelagoCommandEventArgs() { Command = commandTextbox.Text });
+            commandTextbox.Clear();
         }
     }
 }
