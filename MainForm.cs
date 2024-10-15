@@ -1,9 +1,14 @@
+using Archipelago.Core.GUI.Logging;
+using Serilog;
+using Serilog.Core;
+
 namespace Archipelago.Core.GUI
 {
     public partial class MainForm : Form
     {
         public event EventHandler<ConnectClickedEventArgs> ConnectClicked;
         public event EventHandler<ArchipelagoCommandEventArgs> CommandReceived;
+        private static Logger _log;
         public MainForm(GuiDesignOptions options)
         {
             InitializeComponent();
@@ -29,23 +34,23 @@ namespace Archipelago.Core.GUI
             {
                 pictureBox1.Image = options.Image;
             }
+            LoggerConfig.Initialize((e) => WriteLine(e));
         }
         public MainForm()
         {
             InitializeComponent();
+            LoggerConfig.Initialize((e) => WriteLine(e));
         }
         private void connectBtn_Click(object sender, EventArgs e)
         {
             ConnectClicked?.Invoke(this, new ConnectClickedEventArgs() { Host = hostTextbox.Text, Password = passwordTextbox.Text, Slot = slotTextbox.Text });
         }
-        public void WriteLine(string output)
+        private void WriteLine(string output)
         {
             Invoke((Delegate)(() =>
             {
                 outputTextbox.Text += output;
                 outputTextbox.Text += System.Environment.NewLine;
-
-                System.Diagnostics.Debug.WriteLine(output + System.Environment.NewLine);
             }));
         }
 

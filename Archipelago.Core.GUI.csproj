@@ -3,7 +3,7 @@
   <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <Version>0.0.13</Version>
+    <Version>0.0.14</Version>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -17,4 +17,7 @@
   <PropertyGroup>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="4.0.2" />
+  </ItemGroup>
 </Project>
