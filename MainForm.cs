@@ -30,9 +30,23 @@ namespace Archipelago.Core.GUI
                 connectBtn.ForeColor = options.ButtonTextColor.Value;
                 commandBtn.ForeColor = options.ButtonTextColor.Value;
             }
-            if (options.Image != null)
+            if (options.CornerImage != null)
             {
-                pictureBox1.Image = options.Image;
+                pictureBox1.Image = options.CornerImage;
+            }
+            if(options.BackgroundImage != null)
+            {
+                this.BackgroundImage = options.BackgroundImage;
+            }
+            if(options.TextColor != null)
+            {
+                label1.ForeColor = options.TextColor.Value;
+                label2.ForeColor = options.TextColor.Value;
+                label3.ForeColor = options.TextColor.Value;
+            }
+            if(options.Icon != null)
+            {
+                this.Icon = options.Icon;
             }
             LoggerConfig.Initialize((e) => WriteLine(e));
         }

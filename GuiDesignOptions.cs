@@ -12,6 +12,9 @@ namespace Archipelago.Core.GUI
         public Color? BackgroundColor { get; set; } = null;
         public Color? ButtonColor { get; set; } = null;
         public Color? ButtonTextColor { get; set; } = null;
-        public Image Image { get; set; }
+        public Image CornerImage { get; set; }
+        public Image BackgroundImage { get; set; }
+        public Color? TextColor { get; set; } = null;
+        public Icon Icon { get; set; }
     }
 }
